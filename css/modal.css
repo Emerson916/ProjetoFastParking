@@ -122,3 +122,20 @@
     transition: 1s;
     border: solid 1px #fff;
 }
+
+.buttonBlue{
+    width: 170px;
+    height: 50px;
+    background-color: #1fb6ff;
+    border-radius: 50px;
+    cursor: pointer;
+    border: solid 1px #262626;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.buttonBlue:hover{
+    transition: 1s;
+    border: solid 1px #fff;
+}

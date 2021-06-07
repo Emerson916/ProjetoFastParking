@@ -1,13 +1,5 @@
 'use strcit'
 
-//Banco de dados dos clientes
-const bancoDeDados = () => JSON.parse(localStorage.getItem('bancoDeDados')) ?? [];
-const setBancoDeDados = (bancoDeDados) => localStorage.setItem('bancoDeDados', JSON.stringify(bancoDeDados));
-
-//Banco de dados dos preços
-const BDpreco = () => JSON.parse(localStorage.getItem('preco')) ?? [];
-const setBDPreco = (preco) => localStorage.setItem('preco', JSON.stringify(preco));
-
 //Modal Preços
 const openModalPrecos = () => document.querySelector('#modal-Prices').classList.add('active');
 const closeModalPrecos = () => document.querySelector('#modal-Prices').classList.remove('active');
@@ -15,6 +7,18 @@ const closeModalPrecos = () => document.querySelector('#modal-Prices').classList
 //Modal Editar
 const openModalEdit = () => document.querySelector('#modal-edit').classList.add('active');
 const closeModalEdit = () => document.querySelector('#modal-edit').classList.remove('active');
+
+//Modal Comprovante
+const openModalReceipt = () => document.querySelector('#modal-receipt').classList.add('active');
+const closeModalReceipt = () => document.querySelector('#modal-receipt').classList.remove('active');
+
+//Banco de dados dos clientes
+const bancoDeDados = () => JSON.parse(localStorage.getItem('bancoDeDados')) ?? [];
+const setBancoDeDados = (bancoDeDados) => localStorage.setItem('bancoDeDados', JSON.stringify(bancoDeDados));
+
+//Banco de dados dos preços
+const BDpreco = () => JSON.parse(localStorage.getItem('preco')) ?? [];
+const setBDPreco = (preco) => localStorage.setItem('preco', JSON.stringify(preco));
 
 
 const inserirBD = (client) => {
@@ -66,7 +70,7 @@ const updateTable = () => {
     // limpar tabela
     clearTable()
     // ler o banco de dados
-   const lerBancoDeDados = bancoDeDados()
+    const lerBancoDeDados = bancoDeDados()
     // Criar linhas na tbody com os registros
     lerBancoDeDados.forEach(createRow)
 }
@@ -167,31 +171,53 @@ const deleteClient = (index) => {
     }
 }
 
+const deleteClientEdit = (index) => {
+    const lerBancoDeDados = bancoDeDados()
+    const resp = confirm(`O cliente atual, ${lerBancoDeDados[index].nome}, será editado, deseja continuar?`)
+    
+    if (resp) {
+        lerBancoDeDados.splice(index, 1)
+        setBancoDeDados(lerBancoDeDados)
+        updateTable()
+    }
+}
+
 const editClient = (index) => {
+    console.log(index)
 
     const lerBancoDeDados = bancoDeDados()
     document.querySelector('#nomeEdited').value = lerBancoDeDados[index].nome
     document.querySelector('#placaEdited').value = lerBancoDeDados[index].placa
     document.querySelector('#data').value = lerBancoDeDados[index].data
     document.querySelector('#hora').value = lerBancoDeDados[index].hora
-  
-    deleteClient(index);
+    
+    deleteClientEdit(index);
+}
+
+const setReceipt = (index) => {
+    const lerBancoDeDados = bancoDeDados();
+    const input = Array.from(document.querySelectorAll('#form-receipt input'));
+    input[0].value = lerBancoDeDados[index].nome;
+    input[1].value = lerBancoDeDados[index].placa;
+    input[2].value = lerBancoDeDados[index].data;
+    input[3].value = lerBancoDeDados[index].hora;
 }
 
 const actionButtons = (event) => {
     const button = event.target;
     if (button.id == "button-receipt") {
-        const index = button.dataset.index;
+        const index = button.dataset.action.slip('-');
         openModalReceipt();
-        setReceipt(index);
+        setReceipt(index[index]);
     } else if (button.id == "button-exit") {
-        const index = button.dataset.index;
+        const index = button.dataset.action.slip('-'); 
         openModalExit();
         setExit(index);
     } else if (button.id == "button-edit") {
-        const index = button.dataset.index;
+        const index = button.dataset.action.split('-');
+       
         openModalEdit();
-        editClient(index);
+        editClient(index[1])
     }
 }
 //Modal preços
@@ -216,6 +242,13 @@ document.querySelector('#close-edit')
 
 document.querySelector('#cancelar-edit')
     .addEventListener('click', () => { closeModalEdit(); clearInput() });    
+
+//MODAL COMPROVANTE
+document.querySelector('#close-receipt')
+    .addEventListener('click', () => { closeModalReceipt(); clearInputs() });
+
+document.querySelector('#cancelar-receipt')
+    .addEventListener('click', () => { closeModalReceipt(); clearInputs() });    
 
 //SALVAR EDITAR
 document.querySelector('#editar')

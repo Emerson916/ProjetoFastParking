@@ -117,6 +117,38 @@
         </div>
     </div>
 
+    <!-- Modal de comprovante -->
+    <div class="modal" id="modal-receipt">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Comprovante</h1>
+                <span class="close-button" id="close-receipt">&#10006;</span>
+            </header>
+            <form class="form" id="form-receipt">
+                <div>
+                    <label>Nome:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Placa:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Data:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+                <div>
+                    <label>Hora:</label>
+                    <input class="input-readonly" readonly />
+                </div>
+            </form>
+            <footer class="modal-footer">
+                <button type="submit" class="buttonBlue" id="imprimir-receipt">Imprimir</button>
+                <button type="button" class="buttonRed" id="cancelar-receipt">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
     <footer>
         <div class="copyright">
             <small>Copyright &copy; Emerson Silva</small>
