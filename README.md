@@ -19,4 +19,4 @@ Tutor do Projeto: <a href="https://github.com/fernandoleonid">Fernando Leonid</a
 
 
 ## Visite o projeto, ao link a baixo:
-https://emerson916.github.io/fastParking/registro.html
+https://emerson916.github.io/ProjetoFastParking/registro.html
