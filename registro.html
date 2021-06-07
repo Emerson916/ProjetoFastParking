@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="sortcut icon" href="img/fastParking.png" type="image/jpg">
+    <script src="main.js" defer></script>
+
+    <title>FastParking</title>
+</head>
+<body>
+    <header class="title_container">
+        <div class="title">
+            <h2>Sistema <span id="fast">Fast</span><span id="parking">Parking</span></h2>
+            <img src="img/fastParking.png" title="FastParking" alt="FastParking.img">
+        </div>
+    </header>
+
+    <div class="register">
+        <form class="register_container">
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name" data-index='' placeholder="Digite o nome do cliente aqui" required/>
+
+            <label for="slab">Placa:</label>
+            <input type="text" name="slab" id="slab" placeholder="Digite a placa do carro do cliente aqui" required/>
+        </form>
+        <button type="button" class="button_add" id="salvar">Adicionar</button>
+        <button type="button" class="button_price" id="precos">Preços</button>
+    </div>
+
+    <table class="table" id="tableClient">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Placa</th>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--
+            <tr>
+                <td>Emerson Silva </td>
+                <td>ABC-1234</td>
+                <td>29/05/2021</td>
+                <td>1:00:25</td>
+                <td>
+                    <button type="button" class="button_comp">Comp.</button>
+                    <button type="button" class="button_edit">Editar</button>
+                    <button type="button" class="button_exit">Saida</button>
+                </td>
+            </tr>-->
+        </tbody>
+    </table>
+    <!-- Modal-Preços -->
+    <div class="modal" id="modal-Prices">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Preços</h1>
+                <span class="close-button" id="close-prices">&#10006;</span>
+            </header>
+
+            <form class="form" id="form-price">
+                <div>
+                    <label for="primeira-hora">Primeira hora</label>
+                    <input type="text" class="input-form" id="primeira-hora" placeholder="Primeira hora" required />
+                </div>
+                <div>
+                    <label for="demais-horas">Demais horas</label>
+                    <input type="text" class="input-form" id="demais-horas" placeholder="Demais horas" required />
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="buttonGreen" id="salvarPreco">Salvar</button>
+                <button type="button" class="buttonRed" id="cancelar-prices">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR -->
+    <div class="modal" id="modal-edit">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1>Editar</h1>
+                <span class="close-button" id="close-edit">&#10006;</span>
+            </header>
+
+            <form class="form" id="form-edit">
+                <div>
+                    <label for="nome-edited">Nome</label>
+                    <input type="text" class="input-form" id="nomeEdited" required />
+                </div>
+                <div>
+                    <label for="placa-edited">Placa</label>
+                    <input type="text" class="input-form" id="placaEdited" required />
+                </div>
+                <div>
+                    <label for="data">Data</label>
+                    <input type="text" class="input-readonly" id="data" readonly />
+                </div>
+                <div>
+                    <label for="hora">Hora de Entrada</label>
+                    <input type="text" class="input-readonly" id="hora" readonly />
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="buttonGreen" id="editar">Salvar</button>
+                <button type="button" class="buttonRed" id="cancelar-edit">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <small>Copyright &copy; Emerson Silva</small>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family:  Verdana, Tahoma;
+}
+
+#fast{
+    color: #105788;
+}
+
+#parking{
+    color: #dbc403;
+}
+
+.title_container{
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.title{
+    text-align: center;
+    margin-right: 200px;
+    padding-top: 10px;
+}
+
+.title > img{
+    display: flex;
+    margin-left: 850px;
+    margin-top: -60px;   
+}
+
+.register{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 250px;
+   
+    text-align: center;
+    border-radius: 50px;
+    border: solid 2px #262626;
+    
+}
+
+.register_container > input{
+    width: 50%;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px #262626;
+    border-radius: 5px;
+}
+
+label{
+    display: flex;
+    margin-left: 170px;
+    margin-top: 15px;
+}
+
+.register > button{
+    width: 170px;
+    height: 50px;
+    margin-top: 60px;
+
+}
+
+.button_add{
+    background:#13CE66;
+    border-radius: 50px;
+    cursor: pointer;
+    border: solid 1px #262626;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.button_add:hover{
+    transition: 1s;
+    border: solid 1px #fff;
+}
+
+.button_price{
+    background-color: rgba(212, 226, 12, 0.911);
+    border-radius: 50px;
+    cursor: pointer;
+    border: solid 1px #262626;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.button_price:hover{
+    transition: 1s;
+    border: solid 1px #fff;
+}
+
+.button_comp{
+    background-color: rgba(212, 226, 12, 0.911);
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.button_edit{
+    background-color: #1fb6ff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.button_exit{
+    background-color: #ff4949;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-family: Tahoma;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-collapse: collapse;
+    user-select: none;
+}
+
+.table thead {
+    background-color: #262626;
+    color: #ccc;
+    height: 50px;
+}
+
+.table thead th,
+.table tbody td {
+    padding: 0 20px;;
+}
+.table tbody td {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.table thead th:last-child,
+.table tbody td:last-child{
+    min-width: 400px;
+    text-align: center;
+}
+
+.table tr:hover {
+    background-color: #00000020;
+}
+
+.copyright{
+    width: 100%;
+    height: 40px;
+    background-color: #262626;
+    color: #fff;
+    text-align:center;
+    padding-top: 20px;
+    user-select: none;
+    font-family: monospace;
+    font-size: 1.1em;
+    margin-top:65px;
+}
