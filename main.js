@@ -148,10 +148,10 @@ const isValidFormEdit = () => document.querySelector('#form-edit').reportValidit
 const saveClientEdited = () => {
     if (isValidFormEdit()) {
         const newClient = {
-            nome: document.querySelector('#nome-edited').value,
-            placa: document.querySelector('#placa-edited').value,
+            nome: document.querySelector('#nomeEdited').value,
+            placa: document.querySelector('#placaEdited').value,
             data: document.querySelector('#data').value,
-            hora: document.querySelector('#hora').value,
+            hora: document.querySelector('#hora').value
         }
         inserirBD(newClient);
         clearInput();
@@ -254,5 +254,3 @@ document.querySelector('#cancelar-receipt')
 document.querySelector('#editar')
     .addEventListener('click', saveClientEdited);
 updateTable ()
-
-//teste git 
