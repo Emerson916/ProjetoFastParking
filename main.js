@@ -254,3 +254,5 @@ document.querySelector('#cancelar-receipt')
 document.querySelector('#editar')
     .addEventListener('click', saveClientEdited);
 updateTable ()
+
+//teste git 
